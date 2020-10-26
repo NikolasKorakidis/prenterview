@@ -1,8 +1,7 @@
 import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View, ScrollView } from "react-native";
+import { StyleSheet } from "react-native";
 import Breather from "./pages/Breather/Breather";
 import HomePage from "./pages/HomePage/HomePage";
 import HowDoYouFeel from "./pages/HowDoYouFeel/HowDoYouFeel";
@@ -15,17 +14,10 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/*    {/*    <View style={styles.container}>
-          <HomePage /> */}
         <Stack.Screen name="Home" component={HomePage} />
-        <Stack.Screen name="To do list" component={ToDoList} />
-
-        {/* <HowDoYouFeel />
-          <Breather />
-          <HomePage />
-          <Text>Open up App.tsx to start working on your app!</Text>
-          <StatusBar style="auto" />
-        </View> */}
+        <Stack.Screen name="ToDoList" component={ToDoList} />
+        <Stack.Screen name="HowYouFeel" component={HowDoYouFeel} />
+        <Stack.Screen name="Breather" component={Breather} />
       </Stack.Navigator>
     </NavigationContainer>
   );
