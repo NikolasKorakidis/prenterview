@@ -1,30 +1,36 @@
-import React from 'react'
-import { Button, Text, View, Alert} from 'react-native'
-import ToDoList from '../ToDoList/ToDoList'
+import React from "react";
+import { Button, Text, View, Alert } from "react-native";
+import ToDoList from "../ToDoList/ToDoList";
+import { StackNavigationProp } from "@react-navigation/stack";
 
-export default function HomePage() {
-    return (
-        <View>
-            <Text>This is homepage</Text>
-            <Text>
- <Button
-        title="To do list"
-        onPress={() => Alert.alert('Simple Button pressed')}
-      />     
+type ProfileScreenNavigationProp = StackNavigationProp<
+  RootStackParamList,
+  "Profile"
+>;
 
-<Button
-        title="How do you feel"
+type Props = {
+  navigation: ProfileScreenNavigationProp;
+};
 
-        onPress={() => Alert.alert('Simple Button pressed')}
-      />  
-       <Button
-               title="Breather"
+export default function HomePage({}) {
+  return (
+    <View>
+      <Text>This is homepage</Text>
+      <Text>
+        <Button
+          title="To do list"
+          onPress={() => Alert.alert("Simple Button pressed")}
+        />
 
-        onPress={() => Alert.alert('Simple Button pressed')}
-      />  
-
-      </Text> 
-
-      </View>
-    )
+        <Button
+          title="How do you feel"
+          onPress={() => Alert.alert("Simple Button pressed")}
+        />
+        <Button
+          title="Breather"
+          onPress={() => Alert.alert("Simple Button pressed")}
+        />
+      </Text>
+    </View>
+  );
 }
