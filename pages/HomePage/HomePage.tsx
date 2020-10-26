@@ -4,36 +4,27 @@ import ToDoList from "../ToDoList/ToDoList";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { NavigationScreenProp } from "react-navigation";
 
-type RootStackParamList = {
-  Profile: { userId: string };
-};
-type ProfileScreenNavigationProp = StackNavigationProp<
-  RootStackParamList,
-  "Profile"
->;
-type Props = {
-  navigation: ProfileScreenNavigationProp;
-};
-
-export default function HomePage({ navigation }: Props) {
+export default function HomePage({ navigation }) {
   return (
     <View>
       <Text>This is homepage</Text>
-      <Text>
-        <Button
-          title="To do list"
-          onPress={() => navigation.navigate("Profile", { name: "Jane" })}
-        />
-
-        <Button
-          title="How do you feel"
-          onPress={() => navigation.navigate("Profile", { name: "Jane" })}
-        />
-        <Button
-          title="Breather"
-          onPress={() => navigation.navigate("Profile", { name: "Jane" })}
-        />
-      </Text>
+      <Text>Welcome to Prenterview</Text>
+      <Button
+        title="Checklist"
+        onPress={() => navigation.navigate("ToDoList")}
+      />
+      <Button
+        title="How do you feel?"
+        onPress={() => navigation.navigate("HowDoYouFeel")}
+      />
+      <Button
+        title="Take a deep Breath!"
+        onPress={() => navigation.navigate("Breather")}
+      />
+      <Button
+        title="About this App."
+        onPress={() => navigation.navigate("Details")}
+      />
     </View>
   );
 }
