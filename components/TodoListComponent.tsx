@@ -8,6 +8,7 @@ interface Props {
 }
 
 export const TodoListComponent: React.FC<Props> = ({todos, toggleTodo}) => {
+  // console.log("todos",todos)
     return(
   <View>
 {todos.map((todo) => {
@@ -18,7 +19,6 @@ export const TodoListComponent: React.FC<Props> = ({todos, toggleTodo}) => {
             key={todo.text}
             todo={todo}
             toggleTodo={toggleTodo}/>
-            
           </View>
         );
       })}
