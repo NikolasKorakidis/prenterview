@@ -1,50 +1,134 @@
 import React, { useState } from "react";
-import { Text, View, Button, Alert } from "react-native";
+import { Text, View, Button, SafeAreaView, StyleSheet } from "react-native";
+import quotesJSON from "./dataBase.json";
 
-export default function HowDoYouFeel() {
-  const [feeling, setFeeling] = useState<string>("");
+const Separator = () => <View style={styles.separator} />;
+
+const HowDoYouFeel = () => {
+  const [quote, setQuote] = useState(["", ""]);
+
+  type QuoteObject = {
+    stressedArray: string[][];
+    anxiousArray: string[][];
+    panickyArray: string[][];
+    excitedArray: string[][];
+    happyArray: string[][];
+  };
+
+  const quoteObject: QuoteObject = quotesJSON;
+
+  // console.log("json", quotesJSON, "quoteObject", quoteObject);
+  // console.log("quote state", quote);
 
   return (
-    <View>
-      <Text>Hello, how do you feel?</Text>
-
-      <Button title="STRESSED" onPress={() => setFeeling("feeling stressed")} />
-
-      <Button
-        title="ANXIOUS"
-        onPress={() => Alert.alert("Simple Button pressed")}
-      />
-
-      <Button
-        title="PANICKY"
-        onPress={() => Alert.alert("Simple Button pressed")}
-      />
-
-      <Button
-        title="EXCITED"
-        onPress={() => Alert.alert("Simple Button pressed")}
-      />
-
-      <Button
-        title="HAPPY"
-        onPress={() => Alert.alert("Simple Button pressed")}
-      />
-
-      <Text>Your feeling {feeling}</Text>
-    </View>
+    <SafeAreaView>
+      <View>
+        <Text style={styles.title}>How are you feeling?</Text>
+      </View>
+      <Separator />
+      <View style={styles.container}>
+        <View style={styles.button}>
+          <Button
+            title="STRESSED"
+            onPress={() =>
+              setQuote(
+                quoteObject.stressedArray[
+                  Math.floor(Math.random() * quoteObject.stressedArray.length)
+                ]
+              )
+            }
+          />
+        </View>
+        <View style={styles.button}>
+          <Button
+            title="ANXIOUS"
+            onPress={() =>
+              setQuote(
+                quoteObject.anxiousArray[
+                  Math.floor(Math.random() * quoteObject.anxiousArray.length)
+                ]
+              )
+            }
+          />
+        </View>
+        <View style={styles.button}>
+          <Button
+            title="PANICKY"
+            onPress={() =>
+              setQuote(
+                quoteObject.panickyArray[
+                  Math.floor(Math.random() * quoteObject.panickyArray.length)
+                ]
+              )
+            }
+          />
+        </View>
+        <View style={styles.button}>
+          <Button
+            title="EXCITED"
+            onPress={() =>
+              setQuote(
+                quoteObject.excitedArray[
+                  Math.floor(Math.random() * quoteObject.excitedArray.length)
+                ]
+              )
+            }
+          />
+        </View>
+        <View style={styles.button}>
+          <Button
+            style={styles.button}
+            title="HAPPY"
+            onPress={() =>
+              setQuote(
+                quoteObject.happyArray[
+                  Math.floor(Math.random() * quoteObject.happyArray.length)
+                ]
+              )
+            }
+          />
+        </View>
+      </View>
+      <Separator />
+      <View style={styles.container}>
+        {/*        <Text>Your quote: </Text> */}
+        <Text>{quote[0]}</Text>
+        <Text /* style='strong' */>{quote[1]}</Text>
+      </View>
+    </SafeAreaView>
   );
-}
+};
 
-/*PLAN
-X Add a button asking how do you feel
-X On click
-X Siplay a drop down option with good, bad, neutral,
-On click (useEffect)
-Use axios to dispatch a request
-Set up this resquest
-On response, console.log the response. 
-Use setState to display the quote
-Have string or a componenet under the button for displaying the quote
-[ ] Add the two buttons linking back to the home, feature 1 and feature 2
+const styles = StyleSheet.create({
+  title: {
+    textAlign: "center",
+    marginVertical: 8,
+  },
+  separator: {
+    marginVertical: 8,
+    borderBottomColor: "#737373",
+    borderBottomWidth: StyleSheet.hairlineWidth,
+  },
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    marginHorizontal: 16,
+  },
+  button: {
+    flex: 1,
+    justifyContent: "center",
+    marginHorizontal: 16,
+    marginVertical: 8,
+  } /*,
+  fixToText: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  separator: {
+    marginVertical: 8,
+    borderBottomColor: "#737373",
+    borderBottomWidth: StyleSheet.hairlineWidth,
+  }, */,
+});
 
- */
+export default HowDoYouFeel;
