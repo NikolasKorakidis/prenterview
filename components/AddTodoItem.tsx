@@ -25,9 +25,5 @@ onPress={()=> {addTodo(text)
     setText('')}}
 />
       </View>
-    // <form>
-    //   <input type="text" />
-    //   <button type="submit">Add Todo</button>
-    // </form>
   );
 };

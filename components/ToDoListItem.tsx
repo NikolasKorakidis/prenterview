@@ -5,18 +5,8 @@ import { CheckBox } from 'react-native-elements'
 
 
 type Props = {
-  // we should receive a todo item object
   todo: Todo;
   toggleTodo: ToggleTodo;
-
-
-  // and a function that we don't have to give
-  //  anything, and doesn't return anything either
-  //  (it "just does" something)
-//   toggleDone: () => void;
-
-  // ..and maybe we'll add some more stuff later,
-  //  this will be enough for now
 };
 
 

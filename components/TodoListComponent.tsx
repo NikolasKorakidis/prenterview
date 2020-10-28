@@ -23,15 +23,5 @@ export const TodoListComponent: React.FC<Props> = ({todos, toggleTodo}) => {
         );
       })}
 
-{/* <TextInput
-// placeholder={newTask}
-            onChangeText={(text) => set_newTask(text)}
-            value={newTask}
-          />
-<Button
-title="Add new task"
-// onPress={() => {setList({...list, text:newTask}}
-/> */}
-
   </View>
   )}
