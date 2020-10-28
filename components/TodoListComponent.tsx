@@ -1,50 +1,37 @@
 import React, {useState} from 'react'
-import { View, Text } from 'react-native'
-// import {ToDo} from "../../types"
-import { CheckBox } from 'react-native-elements'
-import { Item } from "../models";
-import TodoItem from "../components/ToDoItem";
+import { View,Button, TextInput} from 'react-native'
+import {TodoListItem} from "./ToDoListItem";
 
-export default function TodoList() {
-  // note the <Item[]> syntax!
-  const [list, setList] = useState<Item[]>([
-    {
-      id: 0,
-      text: "Make this app",
-      tags: ["react", "typescript"],
-      isDone: false,
-    },
-    {
-      id: 1,
-      text: "Fall in love with TypeScript",
-      tags: ["romantic", "typescript"],
-      isDone: false,
-    },
-  ]);
+interface Props {
+  todos: Todo[];
+  toggleTodo: ToggleTodo;
+}
 
-  const toggle = (id: number) => {
-    const changeTheField = list.map((oneList)=> {
-        if (oneList.id === id){
-            return  {...oneList, isDone: !oneList.isDone};
-        } else {
-            return oneList
-        }
-    });
-    setList(changeTheField)
-  }
-  return(
+export const TodoListComponent: React.FC<Props> = ({todos, toggleTodo}) => {
+    return(
   <View>
-{list.map((item) => {
+{todos.map((todo) => {
         return (
           <View>
             {/* <button>{item.tags}</button> */}
-            <TodoItem
-              key={item.id}
-              item={item}
-              toggleDone={() => toggle(item.id)}
-            />
+            <TodoListItem
+            key={todo.text}
+            todo={todo}
+            toggleTodo={toggleTodo}/>
+            
           </View>
         );
       })}
+
+{/* <TextInput
+// placeholder={newTask}
+            onChangeText={(text) => set_newTask(text)}
+            value={newTask}
+          />
+<Button
+title="Add new task"
+// onPress={() => {setList({...list, text:newTask}}
+/> */}
+
   </View>
   )}
