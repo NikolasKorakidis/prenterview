@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { Text, View, Button, SafeAreaView, StyleSheet } from "react-native";
 import quotesJSON from "./dataBase.json";
 
-const Separator = () => <View style={styles.separator} />;
-
 const HowDoYouFeel = () => {
   const [quote, setQuote] = useState(["", ""]);
 
@@ -17,15 +15,11 @@ const HowDoYouFeel = () => {
 
   const quoteObject: QuoteObject = quotesJSON;
 
-  // console.log("json", quotesJSON, "quoteObject", quoteObject);
-  // console.log("quote state", quote);
-
   return (
     <SafeAreaView>
       <View>
         <Text style={styles.title}>How are you feeling?</Text>
       </View>
-      <Separator />
       <View style={styles.container}>
         <View style={styles.button}>
           <Button
@@ -77,7 +71,6 @@ const HowDoYouFeel = () => {
         </View>
         <View style={styles.button}>
           <Button
-            style={styles.button}
             title="HAPPY"
             onPress={() =>
               setQuote(
@@ -89,7 +82,6 @@ const HowDoYouFeel = () => {
           />
         </View>
       </View>
-      <Separator />
       <View style={styles.container}>
         {/*        <Text>Your quote: </Text> */}
         <Text>{quote[0]}</Text>
@@ -119,16 +111,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginHorizontal: 16,
     marginVertical: 8,
-  } /*,
-  fixToText: {
-    flexDirection: "row",
-    justifyContent: "space-between",
   },
-  separator: {
-    marginVertical: 8,
-    borderBottomColor: "#737373",
-    borderBottomWidth: StyleSheet.hairlineWidth,
-  }, */,
 });
 
 export default HowDoYouFeel;
