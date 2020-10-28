@@ -1,12 +1,19 @@
 import React, { useState } from "react";
-import { Button, Image, StyleSheet, Text, View } from "react-native";
+import {
+  Button,
+  Image,
+  StyleSheet,
+  Text,
+  View,
+  ScrollView,
+} from "react-native";
 import Start from "./components/Start";
 import Animation from "./components/Amination";
 
 export default function Breather() {
   const [status, setstatus] = useState("start");
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       {status === "start" ? (
         <View>
           <Start />
@@ -83,7 +90,7 @@ export default function Breather() {
           <Button title="I feel Better!" onPress={() => setstatus("start")} />
         </View>
       ) : null}
-    </View>
+    </ScrollView>
   );
 }
 
@@ -112,12 +119,3 @@ const styles = StyleSheet.create({
     borderRadius: 50,
   },
 });
-
-{
-  /* <Image
-style={{
-  width: "100%",
-}}
-source={require("./images/check-your-pulse.png")}
-/> */
-}
