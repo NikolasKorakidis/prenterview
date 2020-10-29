@@ -94,12 +94,12 @@ const styles = StyleSheet.create({
   },
   baseText: {
     fontWeight: "bold",
-    color: "#ffa31a",
+    color: "lightgreen",
     fontSize: 50,
     alignSelf: "center",
   },
   secondaryText: {
-    color: "#ffa31a",
+    color: "lightgreen",
     fontSize: 30,
     alignSelf: "center",
     textAlign: "center",
