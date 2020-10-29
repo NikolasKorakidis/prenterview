@@ -11,8 +11,6 @@ type Props = {
 
 
 export const TodoListItem: React.FC<Props> = ({todo, toggleTodo}) => {
-  const [checked, set_checked] = useState(false);
-  // console.log("todo", todo)
 
   return(
       <View>
@@ -22,8 +20,6 @@ export const TodoListItem: React.FC<Props> = ({todo, toggleTodo}) => {
 >
 
           <CheckBox
-          // style={todo.complete === true ? {textDecorationLine: "line-through"} : null}
-          // style={{textDecorationLine: todo.complete === true ? 'line-through' : undefined}}
          onPress={() => toggleTodo(todo)}
          uncheckedIcon="circle-o"
          checkedColor="blue"

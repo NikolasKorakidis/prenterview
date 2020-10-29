@@ -8,10 +8,6 @@ interface Props {
     
 
 export const DeleteTodoForm: React.FC<Props> = ({deleteTodo}) => {
-    const [text, setText] = useState("");
-    
-
-    // console.log("todosssss", todos)
      
 
   return (
