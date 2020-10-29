@@ -10,10 +10,6 @@ import {
 } from "react-native";
 
 export default function HomePage({ navigation }) {
-  // Styling Notes
-  // BackGround: Moving Image?
-  // Refactor main buttons || import material?
-  // import Logo
   return (
     <SafeAreaView style={styles.container}>
       <Image
@@ -26,40 +22,27 @@ export default function HomePage({ navigation }) {
       >
         <Text style={styles.btntxt}>Are you ready?</Text>
       </TouchableOpacity>
-      {/*       <Button
-        title="Are you Ready?"
-        onPress={() => navigation.navigate("ToDoList")}
-      /> */}
+
       <TouchableOpacity
         onPress={() => navigation.navigate("HowDoYouFeel")}
         style={styles.homeButton}
       >
         <Text style={styles.btntxt}>How do you feel?</Text>
       </TouchableOpacity>
-      {/*       <Button
-        title="How do you feel?"
-        onPress={() => navigation.navigate("HowDoYouFeel")}
-      /> */}
+
       <TouchableOpacity
         onPress={() => navigation.navigate("Breather")}
         style={styles.homeButton}
       >
         <Text style={styles.btntxt}>Are you Relaxed?</Text>
       </TouchableOpacity>
-      {/*       <Button
-        title="Are you Relaxed?"
-        onPress={() => navigation.navigate("Breather")}
-      /> */}
+
       <TouchableOpacity
         onPress={() => navigation.navigate("Details")}
         style={styles.homeButton}
       >
-        <Text style={styles.btntxt}>Details</Text>
+        <Text style={styles.btntxt}>About us</Text>
       </TouchableOpacity>
-      {/*       <Button
-        title="About this App."
-        onPress={() => navigation.navigate("Details")}
-      /> */}
     </SafeAreaView>
   );
 }

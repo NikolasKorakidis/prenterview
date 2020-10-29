@@ -1,20 +1,39 @@
 import React, { useState } from "react";
-import { Button, Image, StyleSheet, Text, View } from "react-native";
+import {
+  Button,
+  Image,
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  TouchableOpacity,
+} from "react-native";
 import Start from "./components/Start";
 import Animation from "./components/Amination";
 
 export default function Breather() {
   const [status, setstatus] = useState("start");
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       {status === "start" ? (
         <View>
           <Start />
-          <Button title="Let's Start" onPress={() => setstatus("pulse")} />
+          <TouchableOpacity
+            onPress={() => setstatus("pulse")}
+            style={styles.button}
+          >
+            <Text style={styles.btntxt}>Let's start</Text>
+          </TouchableOpacity>
+
           <Text style={styles.secondaryText}>
             Let's Use the Breather Anyway
           </Text>
-          <Button title="Breather" onPress={() => setstatus("breather")} />
+          <TouchableOpacity
+            onPress={() => setstatus("breather")}
+            style={styles.button}
+          >
+            <Text style={styles.btntxt}>Breather</Text>
+          </TouchableOpacity>
         </View>
       ) : null}
       {status === "pulse" ? (
@@ -24,14 +43,24 @@ export default function Breather() {
             style={styles.image}
             source={require("./images/findPulse.png")}
           />
-          <Button title="Checked" onPress={() => setstatus("count")} />
+          <TouchableOpacity
+            onPress={() => setstatus("count")}
+            style={styles.button}
+          >
+            <Text style={styles.btntxt}>Checked</Text>
+          </TouchableOpacity>
         </View>
       ) : null}
       {status === "count" ? (
         <View>
           <Text style={styles.baseText}>Focus</Text>
           <Image style={styles.image} source={require("./images/count.png")} />
-          <Button title="Checked" onPress={() => setstatus("double")} />
+          <TouchableOpacity
+            onPress={() => setstatus("double")}
+            style={styles.button}
+          >
+            <Text style={styles.btntxt}>Checked</Text>
+          </TouchableOpacity>
         </View>
       ) : null}
       {status === "double" ? (
@@ -41,7 +70,13 @@ export default function Breather() {
             style={styles.image}
             source={require("./images/doubleIt.png")}
           />
-          <Button title="Checked" onPress={() => setstatus("check")} />
+
+          <TouchableOpacity
+            onPress={() => setstatus("check")}
+            style={styles.button}
+          >
+            <Text style={styles.btntxt}>Checked</Text>
+          </TouchableOpacity>
         </View>
       ) : null}
       {status === "check" ? (
@@ -61,9 +96,24 @@ export default function Breather() {
           >
             Is your heart Rate over 75 BPM
           </Text>
-          <Button title="YES" onPress={() => setstatus("breather")} />
-          <Button title="NO" onPress={() => setstatus("start")} />
-          <Button title="NOT SURE" onPress={() => setstatus("pulse")} />
+          <TouchableOpacity
+            onPress={() => setstatus("breather")}
+            style={styles.button}
+          >
+            <Text style={styles.btntxt}>YES</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => setstatus("start")}
+            style={styles.button}
+          >
+            <Text style={styles.btntxt}>NO</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => setstatus("pulse")}
+            style={styles.button}
+          >
+            <Text style={styles.btntxt}>NOT SURE</Text>
+          </TouchableOpacity>
         </View>
       ) : null}
       {status === "breather" ? (
@@ -74,16 +124,26 @@ export default function Breather() {
             source={require("./images/breathe.png")}
           />
           <Text style={styles.baseText}>Let's take some deep breaths</Text>
-          <Button title="I am Ready" onPress={() => setstatus("animation")} />
+          <TouchableOpacity
+            onPress={() => setstatus("animation")}
+            style={styles.button}
+          >
+            <Text style={styles.btntxt}>I am ready</Text>
+          </TouchableOpacity>
         </View>
       ) : null}
       {status === "animation" ? (
         <View>
           <Animation />
-          <Button title="I feel Better!" onPress={() => setstatus("start")} />
+          <TouchableOpacity
+            onPress={() => setstatus("start")}
+            style={styles.button}
+          >
+            <Text style={styles.btntxt}>I feel Better!</Text>
+          </TouchableOpacity>
         </View>
       ) : null}
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -94,12 +154,12 @@ const styles = StyleSheet.create({
   },
   baseText: {
     fontWeight: "bold",
-    color: "lightgreen",
-    fontSize: 50,
+    color: "#ffa31a",
+    fontSize: 40,
     alignSelf: "center",
   },
   secondaryText: {
-    color: "lightgreen",
+    color: "#ffa31a",
     fontSize: 30,
     alignSelf: "center",
     textAlign: "center",
@@ -110,6 +170,22 @@ const styles = StyleSheet.create({
   image: {
     alignSelf: "center",
     borderRadius: 50,
+  },
+  btntxt: {
+    textAlign: "center",
+    color: "#292929",
+    alignSelf: "center",
+    justifyContent: "center",
+    fontWeight: "bold",
+  },
+  button: {
+    width: "80%",
+    height: 40,
+    marginBottom: 25,
+    marginTop: 25,
+    backgroundColor: "#ffa31a",
+    alignSelf: "center",
+    justifyContent: "center",
   },
 });
 
