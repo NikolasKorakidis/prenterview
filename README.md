@@ -35,7 +35,7 @@ Our App is focus for the person just before an interview. Literally. Just before
 
 ## About Us
 
-If you have any questions or just want to connect go ahead!
+If you have any questions or just want to connect go ahead and find us on LinkedIn!
 
 - Nina Vorobeva <a href="https://www.linkedin.com/in/nina-vorobeva-86a476161/">LinkedIn</a> 💼
 
