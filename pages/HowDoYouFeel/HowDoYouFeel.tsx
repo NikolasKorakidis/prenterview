@@ -1,8 +1,17 @@
 import React, { useState } from "react";
-import { Text, View, Button, SafeAreaView, StyleSheet } from "react-native";
+import {
+  Text,
+  View,
+  Button,
+  SafeAreaView,
+  StyleSheet,
+  TouchableOpacity,
+  Image,
+  Alert,
+} from "react-native";
 import quotesJSON from "./dataBase.json";
 
-const HowDoYouFeel = () => {
+export default function HowDoYouFeel() {
   const [quote, setQuote] = useState(["", ""]);
 
   type QuoteObject = {
@@ -15,86 +24,142 @@ const HowDoYouFeel = () => {
 
   const quoteObject: QuoteObject = quotesJSON;
 
+  const Separator = () => <View style={styles.separator} />;
+
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
+      <Text style={styles.title}>How are you feeling?</Text>
+      {/*      <Separator /> */}
+
+      <TouchableOpacity
+        onPress={() =>
+          setQuote(
+            quoteObject.stressedArray[
+              Math.floor(Math.random() * quoteObject.stressedArray.length)
+            ]
+          )
+        }
+        style={{
+          width: "80%",
+          height: 25,
+          marginBottom: 5,
+          marginTop: 5,
+          backgroundColor: "#fc3903",
+          alignSelf: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Text style={styles.btntxt}>STRESSED</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={() =>
+          setQuote(
+            quoteObject.anxiousArray[
+              Math.floor(Math.random() * quoteObject.anxiousArray.length)
+            ]
+          )
+        }
+        style={{
+          width: "80%",
+          height: 25,
+          marginBottom: 5,
+          marginTop: 5,
+          backgroundColor: "#fc6203",
+          alignSelf: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Text style={styles.btntxt}>ANXIOUS</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={() =>
+          setQuote(
+            quoteObject.panickyArray[
+              Math.floor(Math.random() * quoteObject.panickyArray.length)
+            ]
+          )
+        }
+        style={{
+          width: "80%",
+          height: 25,
+          marginBottom: 5,
+          marginTop: 5,
+          backgroundColor: "#fc8403",
+          alignSelf: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Text style={styles.btntxt}>PANICKY</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={() =>
+          setQuote(
+            quoteObject.excitedArray[
+              Math.floor(Math.random() * quoteObject.excitedArray.length)
+            ]
+          )
+        }
+        style={{
+          width: "80%",
+          height: 25,
+          marginBottom: 5,
+          marginTop: 5,
+          backgroundColor: "#fca903",
+          alignSelf: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Text style={styles.btntxt}>EXCITED</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={() =>
+          setQuote(
+            quoteObject.happyArray[
+              Math.floor(Math.random() * quoteObject.happyArray.length)
+            ]
+          )
+        }
+        style={{
+          width: "80%",
+          height: 25,
+          marginBottom: 5,
+          marginTop: 5,
+          backgroundColor: "#fcce03",
+          alignSelf: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Text style={styles.btntxt}>HAPPY</Text>
+      </TouchableOpacity>
+
+      {/*       <Separator /> */}
       <View>
-        <Text style={styles.title}>How are you feeling?</Text>
-      </View>
-      <View style={styles.container}>
-        <View style={styles.button}>
-          <Button
-            title="STRESSED"
-            onPress={() =>
-              setQuote(
-                quoteObject.stressedArray[
-                  Math.floor(Math.random() * quoteObject.stressedArray.length)
-                ]
-              )
-            }
-          />
-        </View>
-        <View style={styles.button}>
-          <Button
-            title="ANXIOUS"
-            onPress={() =>
-              setQuote(
-                quoteObject.anxiousArray[
-                  Math.floor(Math.random() * quoteObject.anxiousArray.length)
-                ]
-              )
-            }
-          />
-        </View>
-        <View style={styles.button}>
-          <Button
-            title="PANICKY"
-            onPress={() =>
-              setQuote(
-                quoteObject.panickyArray[
-                  Math.floor(Math.random() * quoteObject.panickyArray.length)
-                ]
-              )
-            }
-          />
-        </View>
-        <View style={styles.button}>
-          <Button
-            title="EXCITED"
-            onPress={() =>
-              setQuote(
-                quoteObject.excitedArray[
-                  Math.floor(Math.random() * quoteObject.excitedArray.length)
-                ]
-              )
-            }
-          />
-        </View>
-        <View style={styles.button}>
-          <Button
-            title="HAPPY"
-            onPress={() =>
-              setQuote(
-                quoteObject.happyArray[
-                  Math.floor(Math.random() * quoteObject.happyArray.length)
-                ]
-              )
-            }
-          />
-        </View>
-      </View>
-      <View style={styles.container}>
-        {/*        <Text>Your quote: </Text> */}
-        <Text>{quote[0]}</Text>
-        <Text /* style='strong' */>{quote[1]}</Text>
+        <Text style={styles.baseText}>{quote[0]}</Text>
+        <Text style={styles.secondaryText}>{quote[1]}</Text>
       </View>
     </SafeAreaView>
   );
-};
+}
 
 const styles = StyleSheet.create({
+  btntxt: {
+    textAlign: "center",
+    color: "#292929",
+    alignSelf: "center",
+    justifyContent: "center",
+    fontWeight: "bold",
+  },
   title: {
     textAlign: "center",
+    color: "#ffa31a",
+    fontSize: 25,
+    alignSelf: "center",
     marginVertical: 8,
+    width: "80%",
   },
   separator: {
     marginVertical: 8,
@@ -104,14 +169,25 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
-    marginHorizontal: 16,
+    backgroundColor: "#292929",
   },
-  button: {
-    flex: 1,
+
+  baseText: {
+    fontWeight: "bold",
+    color: "#ffa31a",
+    fontSize: 25,
+    alignSelf: "center",
+    textAlign: "center",
     justifyContent: "center",
-    marginHorizontal: 16,
-    marginVertical: 8,
+    marginHorizontal: 5,
+    marginVertical: 5,
+    width: "80%",
+  },
+  secondaryText: {
+    color: "#ffa31a",
+    fontSize: 15,
+    alignSelf: "center",
+    textAlign: "center",
+    width: "80%",
   },
 });
-
-export default HowDoYouFeel;
