@@ -96,7 +96,7 @@ export default function App() {
             key={item}
             style={{
               opacity: 0.1,
-              backgroundColor: "#ffa31a",
+              backgroundColor: "lightgreen",
               width: circleWidth,
               height: circleWidth,
               borderRadius: circleWidth / 2,
