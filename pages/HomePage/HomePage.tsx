@@ -11,7 +11,7 @@ export default function HomePage({ navigation }) {
       <Text>This is homepage</Text>
       <Text>Welcome to Prenterview</Text>
       <Button
-        title="Checklist"
+        title="Are you Ready?"
         onPress={() => navigation.navigate("ToDoList")}
       />
       <Button
@@ -19,7 +19,7 @@ export default function HomePage({ navigation }) {
         onPress={() => navigation.navigate("HowDoYouFeel")}
       />
       <Button
-        title="Take a deep Breath!"
+        title="Are you Relaxed?"
         onPress={() => navigation.navigate("Breather")}
       />
       <Button
