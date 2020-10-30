@@ -8,11 +8,11 @@ import {
 
 const initialState: Todo[] = [
   {
-    text: "Walk the dog",
+    text: "Bring Your Cv",
     complete: false,
   },
   {
-    text: "Write app",
+    text: "Take a Shower",
     complete: true,
   },
 ];
@@ -33,7 +33,6 @@ export default function (state = initialState, action: TodoListActionTypes) {
         }
         return todo;
       });
-
     default:
       return state;
   }

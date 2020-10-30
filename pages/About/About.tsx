@@ -1,12 +1,6 @@
 import React from "react";
-import { View, Button, Image } from "react-native";
-import {
-  Avatar,
-  Text,
-  Tile,
-  Rating,
-  AirbnbRating,
-} from "react-native-elements";
+import { View, Image } from "react-native";
+import { Avatar, Tile, AirbnbRating } from "react-native-elements";
 
 export default function About() {
   return (

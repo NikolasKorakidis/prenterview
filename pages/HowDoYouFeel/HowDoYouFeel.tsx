@@ -24,8 +24,6 @@ export default function HowDoYouFeel() {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>How are you feeling?</Text>
-      {/*      <Separator /> */}
-
       <TouchableOpacity
         onPress={() =>
           setQuote(
@@ -46,7 +44,6 @@ export default function HowDoYouFeel() {
       >
         <Text style={styles.btntxt}>STRESSED</Text>
       </TouchableOpacity>
-
       <TouchableOpacity
         onPress={() =>
           setQuote(
@@ -88,7 +85,6 @@ export default function HowDoYouFeel() {
       >
         <Text style={styles.btntxt}>PANICKY</Text>
       </TouchableOpacity>
-
       <TouchableOpacity
         onPress={() =>
           setQuote(
@@ -109,7 +105,6 @@ export default function HowDoYouFeel() {
       >
         <Text style={styles.btntxt}>EXCITED</Text>
       </TouchableOpacity>
-
       <TouchableOpacity
         onPress={() =>
           setQuote(
@@ -130,8 +125,6 @@ export default function HowDoYouFeel() {
       >
         <Text style={styles.btntxt}>HAPPY</Text>
       </TouchableOpacity>
-
-      {/*       <Separator /> */}
       <View>
         <Text style={styles.baseText}>{quote[0]}</Text>
         <Text style={styles.secondaryText}>{quote[1]}</Text>

@@ -1,38 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-  SafeAreaView,
-} from "react-native";
+import { Text, TouchableOpacity, StyleSheet, SafeAreaView } from "react-native";
 import { TodoListComponent } from "../../components/TodoListComponent";
 import { AddTodoForm } from "../../components/AddTodoItem";
 import { selectAddedTodo } from "../../store/todolist/selector";
 import { useSelector, useDispatch } from "react-redux";
-
 import {
   createTodo,
   toggledTodo,
   DeleteTodo,
 } from "../../store/todolist/action";
-import { DeleteTodoForm } from "../../components/Delete";
 
-const initialTodos: Todo[] = [
-  {
-    text: "Walk the dog",
-    complete: false,
-  },
-  {
-    text: "Write app",
-    complete: true,
-  },
-];
 export default function TodoList() {
-  // const [todos, setTodos] = useState(initialTodos);
   const todos = useSelector(selectAddedTodo);
-  console.log("added todos", todos);
   const dispatch = useDispatch();
 
   const toggleTodo = (selectedTodo: Todo) => {
@@ -52,11 +32,6 @@ export default function TodoList() {
     <SafeAreaView style={styles.container}>
       <TodoListComponent todos={todos} toggleTodo={toggleTodo} />
       <AddTodoForm addTodo={addTodo} />
-      {/*       <Button
-        title="Detele complited Tasks"
-        onPress={() => deleteTodo(todos)}
-      /> */}
-
       <TouchableOpacity onPress={() => deleteTodo(todos)} style={styles.button}>
         <Text style={styles.btntxt}>Detele complited Tasks</Text>
       </TouchableOpacity>

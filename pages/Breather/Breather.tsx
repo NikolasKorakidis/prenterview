@@ -188,12 +188,3 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 });
-
-{
-  /* <Image
-style={{
-  width: "100%",
-}}
-source={require("./images/check-your-pulse.png")}
-/> */
-}
