@@ -1,4 +1,4 @@
-[![Social banner for PreInterview](https://github.com/simottardi/prenterview/blob/development/screenshots/title.png]()
+[![Social banner for PreInterview](https://github.com/simottardi/prenterview/blob/development/screenshots/title.png)](nikolaskorakidis.com)
 
 ### Welcome to PreInterview App.
 
