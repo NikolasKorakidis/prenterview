@@ -10,11 +10,12 @@ import {
 } from "react-native";
 import Start from "./components/Start";
 import Animation from "./components/Amination";
+import { ScrollView } from "react-native-gesture-handler";
 
 export default function Breather() {
   const [status, setstatus] = useState("start");
   return (
-    <SafeAreaView style={styles.container}>
+    <ScrollView style={styles.container}>
       {status === "start" ? (
         <View>
           <Start />
@@ -134,16 +135,16 @@ export default function Breather() {
       ) : null}
       {status === "animation" ? (
         <View>
-          <Animation />
           <TouchableOpacity
             onPress={() => setstatus("start")}
             style={styles.button}
           >
             <Text style={styles.btntxt}>I feel Better!</Text>
           </TouchableOpacity>
+          <Animation />
         </View>
       ) : null}
-    </SafeAreaView>
+    </ScrollView>
   );
 }
 

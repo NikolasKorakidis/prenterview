@@ -37,6 +37,8 @@ Our App is focused on the person who is just about to an interview. Literally. J
 
 ![Main Page](https://github.com/simottardi/prenterview/blob/development/screenshots/mainpage.png)
 
+![Breather](https://github.com/simottardi/prenterview/blob/development/screenshots/breather.png)
+
 ![About Page](https://github.com/simottardi/prenterview/blob/development/screenshots/about.png)
 
 ---
