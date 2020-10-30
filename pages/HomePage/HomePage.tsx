@@ -1,30 +1,76 @@
 import React from "react";
-import { Button, Text, View, Alert } from "react-native";
-import ToDoList from "../ToDoList/ToDoList";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { NavigationScreenProp } from "react-navigation";
+import {
+  Button,
+  Text,
+  View,
+  Image,
+  StyleSheet,
+  SafeAreaView,
+  TouchableOpacity,
+} from "react-native";
 
 export default function HomePage({ navigation }) {
   return (
-    <View>
-      <Text>This is homepage</Text>
-      <Text>Welcome to Prenterview</Text>
-      <Button
-        title="Checklist"
+    <SafeAreaView style={styles.container}>
+      <Image
+        style={styles.logo}
+        source={require("../Breather/images/logo.png")}
+      />
+      <TouchableOpacity
         onPress={() => navigation.navigate("ToDoList")}
-      />
-      <Button
-        title="How do you feel?"
+        style={styles.homeButton}
+      >
+        <Text style={styles.btntxt}>Are you ready?</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
         onPress={() => navigation.navigate("HowDoYouFeel")}
-      />
-      <Button
-        title="Take a deep Breath!"
+        style={styles.homeButton}
+      >
+        <Text style={styles.btntxt}>How do you feel?</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
         onPress={() => navigation.navigate("Breather")}
-      />
-      <Button
-        title="About this App."
+        style={styles.homeButton}
+      >
+        <Text style={styles.btntxt}>Are you Relaxed?</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
         onPress={() => navigation.navigate("Details")}
-      />
-    </View>
+        style={styles.homeButton}
+      >
+        <Text style={styles.btntxt}>About us</Text>
+      </TouchableOpacity>
+    </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  btntxt: {
+    textAlign: "center",
+    color: "#292929",
+    alignSelf: "center",
+    justifyContent: "center",
+    fontWeight: "bold",
+    fontSize: 20,
+  },
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    backgroundColor: "#292929",
+  },
+  homeButton: {
+    width: "80%",
+    height: "10%",
+    marginBottom: 5,
+    marginTop: 5,
+    backgroundColor: "#ffa31a",
+    alignSelf: "center",
+    justifyContent: "center",
+  },
+  logo: {
+    alignSelf: "center",
+  },
+});
