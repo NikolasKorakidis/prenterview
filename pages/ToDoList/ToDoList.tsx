@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 
-import { View, Text, Button, Alert } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  SafeAreaView,
+} from "react-native";
 import { TodoListComponent } from "../../components/TodoListComponent";
 import { AddTodoForm } from "../../components/AddTodoItem";
 import { selectAddedTodo } from "../../store/todolist/selector";
 import { useSelector, useDispatch } from "react-redux";
-import { CheckBox } from "react-native-elements";
+
 import {
   createTodo,
   toggledTodo,
@@ -43,13 +49,40 @@ export default function TodoList() {
   };
 
   return (
-    <View>
+    <SafeAreaView style={styles.container}>
       <TodoListComponent todos={todos} toggleTodo={toggleTodo} />
       <AddTodoForm addTodo={addTodo} />
-      <Button
+      {/*       <Button
         title="Detele complited Tasks"
         onPress={() => deleteTodo(todos)}
-      />
-    </View>
+      /> */}
+
+      <TouchableOpacity onPress={() => deleteTodo(todos)} style={styles.button}>
+        <Text style={styles.btntxt}>Detele complited Tasks</Text>
+      </TouchableOpacity>
+    </SafeAreaView>
   );
 }
+const styles = StyleSheet.create({
+  btntxt: {
+    textAlign: "center",
+    color: "#292929",
+    alignSelf: "center",
+    justifyContent: "center",
+    fontWeight: "bold",
+  },
+  button: {
+    width: "80%",
+    height: 40,
+    marginBottom: 25,
+    marginTop: 25,
+    backgroundColor: "#ffa31a",
+    alignSelf: "center",
+    justifyContent: "center",
+  },
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    backgroundColor: "#292929",
+  },
+});

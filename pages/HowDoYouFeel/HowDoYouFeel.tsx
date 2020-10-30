@@ -2,12 +2,9 @@ import React, { useState } from "react";
 import {
   Text,
   View,
-  Button,
   SafeAreaView,
   StyleSheet,
   TouchableOpacity,
-  Image,
-  Alert,
 } from "react-native";
 import quotesJSON from "./dataBase.json";
 
@@ -23,8 +20,6 @@ export default function HowDoYouFeel() {
   };
 
   const quoteObject: QuoteObject = quotesJSON;
-
-  const Separator = () => <View style={styles.separator} />;
 
   return (
     <SafeAreaView style={styles.container}>
