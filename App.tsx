@@ -6,6 +6,12 @@ import HomePage from "./pages/HomePage/HomePage";
 import HowDoYouFeel from "./pages/HowDoYouFeel/HowDoYouFeel";
 import Breather from "./pages/Breather/Breather";
 import ToDoList from "./pages/ToDoList/ToDoList";
+import { applyMiddleware, createStore } from "redux";
+import { rootReducer } from "./store/rootReducer";
+import thunk from "redux-thunk";
+import { Provider } from "react-redux";
+
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 function HomeScreen({ navigation }) {
   return (
@@ -41,16 +47,18 @@ const Stack = createStackNavigator();
 
 function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="HomePage">
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="HomePage" component={HomePage} />
-        <Stack.Screen name="ToDoList" component={ToDoList} />
-        <Stack.Screen name="HowDoYouFeel" component={HowDoYouFeel} />
-        <Stack.Screen name="Breather" component={Breather} />
-        <Stack.Screen name="Details" component={DetailsScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="HomePage">
+          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="HomePage" component={HomePage} />
+          <Stack.Screen name="ToDoList" component={ToDoList} />
+          <Stack.Screen name="HowDoYouFeel" component={HowDoYouFeel} />
+          <Stack.Screen name="Breather" component={Breather} />
+          <Stack.Screen name="Details" component={DetailsScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 }
 
