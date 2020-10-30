@@ -19,7 +19,7 @@ export default function About() {
             uri:
               "https://www.efilecabinet.com/wp-content/uploads/2016/03/Blurry-Background-Gray.jpg",
           }}
-          title="This is an application for you to prepair the last minutes before you
+          title="This is an application for you to prepare the last minutes before you
           step into your job interview. You can check if you have everything you
           need, you can motivate yourself in case you feel a bit nervous and
           finally you can do some breathing exercises to drop your heart rate
