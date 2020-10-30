@@ -33,6 +33,14 @@ Our App is focus for the person just before an interview. Literally. Just before
 
 ---
 
+## App Interface
+
+![Main Page](https://github.com/simottardi/prenterview/blob/development/screenshots/mainpage.png)
+
+![About Page](https://github.com/simottardi/prenterview/blob/development/screenshots/about.png)
+
+---
+
 ## About Us
 
 If you have any questions or just want to connect go ahead and find us on LinkedIn!
