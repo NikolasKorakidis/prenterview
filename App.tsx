@@ -6,12 +6,25 @@ import HomePage from "./pages/HomePage/HomePage";
 import HowDoYouFeel from "./pages/HowDoYouFeel/HowDoYouFeel";
 import Breather from "./pages/Breather/Breather";
 import ToDoList from "./pages/ToDoList/ToDoList";
+
+import { applyMiddleware, createStore } from "redux";
+import { rootReducer } from "./store/rootReducer";
+import thunk from "redux-thunk";
+import { Provider } from "react-redux";
+
+const store = createStore(rootReducer, applyMiddleware(thunk));
+
+
+
 import About from "./pages/About/About";
+
 
 const Stack = createStackNavigator();
 
 function App() {
   return (
+
+          <Provider store={store}>
     <NavigationContainer>
       <Stack.Navigator initialRouteName="HomePage">
         <Stack.Screen name="HomePage" component={HomePage} />
@@ -21,6 +34,8 @@ function App() {
         <Stack.Screen name="Details" component={About} />
       </Stack.Navigator>
     </NavigationContainer>
+      </Provider>
+
   );
 }
 

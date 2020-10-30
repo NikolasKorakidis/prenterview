@@ -1,9 +1,21 @@
 import React, { useState } from "react";
+
+
 import { View, Text, Button, Alert } from "react-native";
+import { TodoListComponent } from "../../components/TodoListComponent";
+import { AddTodoForm } from "../../components/AddTodoItem";
+import { selectAddedTodo } from "../../store/todolist/selector";
+import { useSelector, useDispatch } from "react-redux";
 import { CheckBox } from "react-native-elements";
+import {
+  createTodo,
+  toggledTodo,
+  DeleteTodo,
+} from "../../store/todolist/action";
 import { TodoListComponent } from "../../components/TodoListComponent";
 import { AddTodoForm } from "../../components/AddTodoItem";
 import { DeleteTodoForm } from "../../components/Delete";
+
 
 const initialTodos: Todo[] = [
   {
@@ -16,37 +28,25 @@ const initialTodos: Todo[] = [
   },
 ];
 export default function TodoList() {
-  const [todos, setTodos] = useState(initialTodos);
-  // console.log("todossss", todos)
+  // const [todos, setTodos] = useState(initialTodos);
+  const todos = useSelector(selectAddedTodo);
+  console.log("added todos", todos);
+  const dispatch = useDispatch();
 
   const toggleTodo = (selectedTodo: Todo) => {
-    const newTodos = todos.map((todo) => {
-      if (todo === selectedTodo) {
-        return {
-          ...todo,
-          complete: !todo.complete,
-        };
-      }
-      return todo;
-    });
-    setTodos(newTodos);
+
+    dispatch(toggledTodo(selectedTodo));
   };
 
   const addTodo: AddTodo = (text: string) => {
-    if (text) {
-      const newTodo = { text, complete: false };
-      setTodos([...todos, newTodo]);
-    } else {
-      Alert.alert("Todo is Empty");
-    }
+    const newTodo = { text, complete: false };
+    dispatch(createTodo(newTodo));
   };
 
-  const deleteTodo: DeleteTodo = (itemList: Todo[]) => {
-    console.log("todos before", todos);
-    setTodos(itemList.filter((todoToStay) => todoToStay.complete === false));
+  const deleteTodo: DeleteTodo = () => {
+    dispatch(DeleteTodo());
   };
 
-  console.log("todos after", todos);
 
   return (
     <View>

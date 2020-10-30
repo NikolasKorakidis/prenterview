@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { View, Button, TextInput, StyleSheet } from "react-native";
 import { TodoListItem } from "./ToDoListItem";
@@ -7,14 +8,17 @@ interface Props {
   toggleTodo: ToggleTodo;
 }
 
-export const TodoListComponent: React.FC<Props> = ({ todos, toggleTodo }) => {
-  // console.log("todos",todos)
-  return (
-    <View>
-      {todos.map((todo) => {
+
+export const TodoListComponent: React.FC<Props> = ({todos, toggleTodo}) => {
+    return(
+  <View>
+{todos.map((todo) => {
         return (
-          <View style={styles.todoList}>
-            <TodoListItem key={todo.text} todo={todo} toggleTodo={toggleTodo} />
+          <View key={todo.text}>
+            <TodoListItem
+            todo={todo}
+            toggleTodo={toggleTodo}/>
+
           </View>
         );
       })}

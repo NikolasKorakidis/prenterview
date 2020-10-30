@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import {
   View,
   TextInput,
@@ -6,6 +7,7 @@ import {
   StyleSheet,
   Text,
 } from "react-native";
+
 
 interface Props {
   addTodo: AddTodo;
@@ -17,21 +19,27 @@ export const AddTodoForm: React.FC<Props> = ({ addTodo }) => {
   return (
     <View>
       <TextInput
+
         style={styles.textInput}
+
         placeholder="Input new note"
         onChangeText={(text) => setText(text)}
         value={text}
       />
 
+
       <TouchableOpacity
+
         onPress={() => {
           addTodo(text);
           setText("");
         }}
+
         style={styles.button}
       >
         <Text style={styles.btntxt}>Add task!</Text>
       </TouchableOpacity>
+
     </View>
   );
 };

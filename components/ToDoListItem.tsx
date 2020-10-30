@@ -42,6 +42,7 @@ export const TodoListItem: React.FC<Props> = ({ todo, toggleTodo }) => {
         >
           {todo.text}
         </Text>
+
       </View>
     </SafeAreaView>
   );

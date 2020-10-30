@@ -12,10 +12,10 @@ interface Props {
   deleteTodo: DeleteTodo;
 }
 
-export const DeleteTodoForm: React.FC<Props> = ({ deleteTodo }) => {
-  const [text, setText] = useState("");
 
-  // console.log("todosssss", todos)
+export const DeleteTodoForm: React.FC<Props> = ({deleteTodo}) => {
+     
+
 
   return (
     <View>
