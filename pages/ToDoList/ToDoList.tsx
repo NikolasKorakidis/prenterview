@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-
 import { View, Text, Button, Alert } from "react-native";
 import { TodoListComponent } from "../../components/TodoListComponent";
 import { AddTodoForm } from "../../components/AddTodoItem";
@@ -12,10 +11,7 @@ import {
   toggledTodo,
   DeleteTodo,
 } from "../../store/todolist/action";
-import { TodoListComponent } from "../../components/TodoListComponent";
-import { AddTodoForm } from "../../components/AddTodoItem";
 import { DeleteTodoForm } from "../../components/Delete";
-
 
 const initialTodos: Todo[] = [
   {
@@ -34,7 +30,6 @@ export default function TodoList() {
   const dispatch = useDispatch();
 
   const toggleTodo = (selectedTodo: Todo) => {
-
     dispatch(toggledTodo(selectedTodo));
   };
 
@@ -46,7 +41,6 @@ export default function TodoList() {
   const deleteTodo: DeleteTodo = () => {
     dispatch(DeleteTodo());
   };
-
 
   return (
     <View>
