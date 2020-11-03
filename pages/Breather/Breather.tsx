@@ -158,6 +158,7 @@ const styles = StyleSheet.create({
     color: "#ffa31a",
     fontSize: 40,
     alignSelf: "center",
+    textAlign: "center",
   },
   secondaryText: {
     color: "#ffa31a",

@@ -51,4 +51,4 @@ If you have any questions or just want to connect go ahead and find us on Linked
 
 - Simone Gottardi <a href="https://www.linkedin.com/in/simone-gottardi-090872a8/">LinkedIn</a> 💼
 
-- Nikolas Korakidis <a href="https://www.linkedin.com/in/nikolas-korakidis-380b791aa/">LinkedIn</a> 💼
+- Nikolas Korakidis <a href="https://www.linkedin.com/in/nikolaskorakidis/">LinkedIn</a> 💼
