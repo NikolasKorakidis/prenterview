@@ -47,8 +47,8 @@ Our App is focused on the person who is just about to an interview. Literally. J
 
 If you have any questions or just want to connect go ahead and find us on LinkedIn, we would love to hear from you.
 
-- Nina Vorobeva <a href="https://www.linkedin.com/in/nina-vorobeva-86a476161/">LinkedIn</a> 💼
+- Nina Vorobeva <a href="https://www.linkedin.com/in/nina-vorobeva/">LinkedIn</a> 💼
 
-- Simone Gottardi <a href="https://www.linkedin.com/in/simone-gottardi-090872a8/">LinkedIn</a> 💼
+- Simone Gottardi <a href="https://www.linkedin.com/in/simone-gottardi/">LinkedIn</a> 💼
 
-- Nikolas Korakidis <a href="https://www.linkedin.com/in/nikolas-korakidis-380b791aa/">LinkedIn</a> 💼
+- Nikolas Korakidis <a href="https://www.linkedin.com/in/nikolaskorakidis/">LinkedIn</a> 💼
