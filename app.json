@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "prenterviw",
-    "slug": "prenterviw",
+    "name": "PreInterview",
+    "slug": "preinterview",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,6 +21,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "We are team Lead and we are three students of Codaisseur 🚀 ! As part of the final Group Project we matched randomly to deliver a project based on Typescript in 4 days! The idea behind PreInterview is that you can build something simple and good looking but also useful and functional with \"An app for developers who are looking for a job\" Theme.",
+    "githubUrl": "https://github.com/simottardi/prenterview/tree/main"
   }
 }

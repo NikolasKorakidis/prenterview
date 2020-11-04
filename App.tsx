@@ -1,21 +1,33 @@
-import { StatusBar } from "expo-status-bar";
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import * as React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import HomePage from "./pages/HomePage/HomePage";
+import HowDoYouFeel from "./pages/HowDoYouFeel/HowDoYouFeel";
+import Breather from "./pages/Breather/Breather";
+import ToDoList from "./pages/ToDoList/ToDoList";
+import { applyMiddleware, createStore } from "redux";
+import { rootReducer } from "./store/rootReducer";
+import thunk from "redux-thunk";
+import { Provider } from "react-redux";
+import About from "./pages/About/About";
 
-export default function App() {
+const store = createStore(rootReducer, applyMiddleware(thunk));
+const Stack = createStackNavigator();
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Provider store={store}>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="HomePage">
+          <Stack.Screen name="HomePage" component={HomePage} />
+          <Stack.Screen name="ToDoList" component={ToDoList} />
+          <Stack.Screen name="HowDoYouFeel" component={HowDoYouFeel} />
+          <Stack.Screen name="Breather" component={Breather} />
+          <Stack.Screen name="Details" component={About} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+export default App;
